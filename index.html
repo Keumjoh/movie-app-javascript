@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Torrent</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="requestAPI.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">
+            <h2>Kooma Torrent</h2>
+        </a>
+        <ul>
+            <li>
+                <form id="forms">
+                    <input type="text" id="search" placeholder="Search Movies..." class="search">
+                </form>
+            </li>
+            <li><a>|</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#browse">Browse Movies</a></li>
+        </ul>
+    </header>
+    <section class="banner">
+        <img src="MovieBanner.jpg" class="fitBg">
+        <div class="content">
+            <h2>Download Movie Torrent</h2>
+            <p>
+                We love movies and we love them even more if they are free. Right? 
+                Here you can browse and download movies in excellent 720p, 1080p, 2160p 4K and 3D quality, all at the smallest file size.
+                You just need to use torrent and you're good to go.
+                
+            </p>
+            <a href="#browse" class="btn">Browse Movie</a>
+        </div>
+    </section>
+
+    <section class="browse" id="browse">
+        <div class="wrapper">
+            <h3><strong>All Movies<span id="moviecount">( * )</span></strong></h3>
+            <div class="cards" id="_cards">
+            </div>
+            <button class="btnNav" id="prev">Previous</button>
+            <button class="btnNav" id="next">Next</button>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="footer">
+            <div class="contain">
+                <div class="col">
+                    <h1>Hat Tips</h1>
+                    <ul>
+                        <a href="https://yts.mx/api"><li>API</li></a>
+                        <a href="https://codepen.io/jakeduncan/pen/rJZJMM"><li>Footer Design</li></a>
+                        <a href="https://codepen.io/mrReiha/pen/RwPgLeM"><li>Card Design</li></a>
+                    </ul>
+                </div>
+                <div class="col social">
+                    <h1>Social</h1>
+                    <ul>
+                        <li><a href="https://discord.gg/Ewx7Nhz"><img src="https://logo-logos.com/wp-content/uploads/2018/03/Discord_icon.png" width="32" style="width: 32px;"></a></li>
+                        <li><a href="https://www.instagram.com/1kooma/"><img src="https://logo-logos.com/wp-content/uploads/2016/10/Instagram_logo_icon.png" width="32" style="width: 32px;"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UC_w-n8SmzZlpNSExM2XSK8g/featured?view_as=subscriber"><img src="https://logo-logos.com/wp-content/uploads/2016/11/YouTube_icon_logo.png" width="32" style="width: 32px;"></a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- END OF FOOTER -->
+    </section>
+    <script type="text/javascript">
+        window.addEventListener("scroll",
+            function () {
+                var getHeader = document.querySelector("header");
+                getHeader.classList.toggle("sticky", window.scrollY > 0);
+            })
+    </script>
+</body>
+
+</html>
