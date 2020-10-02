@@ -18,9 +18,9 @@ function showMovies(_data){
     moviecount.innerText = `( ${_data.data.movie_count} )`;
     cards.innerHTML = "";
     _data.data.movies.forEach(movie =>{
-        const {url, title, medium_cover_image} = movie;
+        const {id, title, medium_cover_image} = movie;
         const movieCard = document.createElement("a");
-        movieCard.setAttribute('href', url);
+        movieCard.setAttribute('href', `details.html?id=${id}`);
         movieCard.innerHTML = `
         <figure class="card">
             <img src="${medium_cover_image}" />
