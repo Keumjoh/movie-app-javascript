@@ -7,6 +7,12 @@
     <title>Movie Torrent</title>
     <script src="javascript/moviedetails.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="javascript/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -14,15 +20,24 @@
         <a href="#" class="logo">
             <h2>Kooma Torrent</h2>
         </a>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#browse">Browse Movies</a></li>
-        </ul>
+        <div class="menu-toggle"></div>
+        <nav>
+            <ul>
+                <li>
+                    <form id="forms">
+                        <input type="text" id="search" placeholder="Search Movies..." class="search">
+                    </form>
+                </li>
+                <li><a>|</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#browse">Browse Movies</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="moviebanner" id="_moviebanner">
         <div class="content" id="_moviecontent">
-            <h2>Loading...</h2 >
+            <h2>Loading...</h2>
         </div>
         <div class="moviepicture" id="_moviepicture">
         </div>
@@ -48,6 +63,21 @@
                         </a>
                     </ul>
                 </div>
+                <div class="col">
+                    <h1>Counter</h1>
+                    <ul>
+                        <li>
+                            <!-- hitwebcounter Code START -->
+                            <a href="https://www.hitwebcounter.com" target="_blank">
+                                <img src="https://hitwebcounter.com/counter/counter.php?page=7683035&style=0038&nbdigits=6&type=page&initCount=0"
+                                    title="Total Website Hits" Alt="Web Hits" border="0" />
+                            </a>
+                        </li>
+                        <a href="https://www.hitwebcounter.com" target="_blank">
+                            <li>hitwebcounter </li>
+                        </a>
+                    </ul>
+                </div>
                 <div class="col social">
                     <h1>Social</h1>
                     <ul>
@@ -68,7 +98,14 @@
         </div>
         <!-- END OF FOOTER -->
     </section>
-
+    <script>
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
     <script type="text/javascript">
         window.addEventListener("scroll",
             function () {

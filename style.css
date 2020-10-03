@@ -22,46 +22,54 @@ section{
 
 header{
     position: fixed;
+    z-index: 100000;
     top: 0;
     left: 0%;
-    z-index: 1000000;
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    padding: 30px 100px;
-    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
     transition: 0.6s;
 }
 
 header.sticky{
-    padding: 10px 100px;
+    padding: 20px;
     background: #070617;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 header .logo{
-    position: relative;
     color: #fff;
     text-decoration: none;
     font-size: 1.2em;
     letter-spacing: 1.5px;
     transition: 0.6s;
+    box-sizing: border-box;
+    float: left;
+}
+
+nav{
+  float: right;
+}
+
+.clearfix{
+  clear: both;
 }
 
 header ul{
-    position: relative;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 header ul li{
-    position: relative;
     list-style: none;
 }
 
 header ul li a{
-    position: relative;
-    margin: 0 15px;
+    display: block;
+    margin: 10px;
     text-decoration: none;
     color: #fff;
     letter-spacing: 1.5px;
@@ -69,9 +77,10 @@ header ul li a{
     transition: 0.6s;
 }
 
+
 header.sticky ul li a, header.sticky .logo{
     color: #fff;
-}
+} 
 
 .search {
     background-color: transparent;
@@ -586,15 +595,56 @@ h3:after {
 
 
 @media (max-width: 767px){
-  header{
-    flex-direction: column;
-  }
-  
   header .logo {
-    font-size: 0.8em;
     margin-bottom: 10px;
   }
 
+  .menu-toggle{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    float: right;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    color: #ccc;
+  }
+
+  .menu-toggle:before
+  {
+    content: '\f0c9';
+    font-family: fontAwesome;
+    line-height: 40px;
+  }
+
+  .menu-toggle.active:before
+  {
+    content: '\f00d';
+    font-family: fontAwesome;
+    line-height: 40px;
+  }
+
+  nav{
+    display: none;
+  }
+
+  nav.active{
+    display: block;
+    width: 100%;
+  }
+
+  nav.active ul{
+    display: block;
+  }
+
+  nav.active ul li{
+    text-align: center;
+  }
+
+  nav.active .search{
+    width: 100%;
+  }
   .banner .content h2{
     font-size: 1.5em;
   }
